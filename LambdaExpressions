@@ -1,0 +1,38 @@
+# LAmbda Function
+package LambdaExpressions;
+@FunctionalInterface
+interface il{
+    void ml();  //all instance method in interface are abstract method
+}
+public class BL1{
+    public static void main (String[] args)
+    {
+        
+        il obj = new il()
+        {
+            @Override
+            public void ml(){
+            System.out.println("abstract method in "+" defined through "+ " lambda Expression");
+            }
+        };       
+        obj.ml();
+    }
+}
+
+Second File
+package LambdaExpressions;
+
+@FunctionalInterface
+interface il {
+    void ml();  // Abstract method declaration
+}
+
+public class Delete {
+    public static void main(String[] args) {
+        // Using lambda expression to implement ml() method of il interface
+        il obj = () -> System.out.println("Inside ml method");
+
+        // Calling ml() method using the lambda expression
+        obj.ml();
+    }
+}
