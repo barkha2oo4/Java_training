@@ -1,0 +1,68 @@
+class check{
+    void checkM1(){
+        System.out.println("Check Class Method ");
+    }
+    class checkInner{
+    void checkM1(){
+        System.out.println("Check Class Method ");
+    }
+  }
+}
+public class AnonymousClass1 {
+    public static void main(String[] args){
+        check obj = new check();
+        obj.checkM1();
+        check.checkInner obj1= obj.new checkInner();
+        obj1.checkM1();
+    }
+}
+
+2nd File
+
+class check1 {
+    void checkM1() {
+        System.out.println("Check Class Method");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        check1 obj = new check1() {
+            void checkM1() {
+                System.out.println("CheckM1 Class in main");
+            }
+            void checkM2() {
+                System.out.println("CheckM2 Class in main");
+            }
+        };
+        obj.checkM1();
+    }
+}
+3rd File
+
+abstract class check3{
+    abstract void m1();
+}
+public class AnonymousClass3 {
+    public static void main(String[] args){
+        check3 obj = new check3()
+        {
+            @Override
+            public void m1()
+            {//class without name
+                System.out.println("Anonymous Inner Class");
+            }
+        };
+        obj.m1();
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
